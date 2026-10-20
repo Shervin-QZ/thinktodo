@@ -22,3 +22,9 @@ State is held in memory and resets on reload. Rates, dates, commercial rules and
 ## Eventual Odoo implementation
 
 Customer identity stays in `res.partner`, workers in `hr.employee`, attendance in existing time sources and invoices in `account.move`. Payments must come from accounting reconciliation. Audit existing factory, branch, recruitment and request custom models before introducing extensions. Production record rules, approvals, effective-dated pricing, multi-company accounting, VAT and integrations require separate engineering.
+
+## Tickets, email, chatter and documents
+
+The Tickets, Email & Chatter, and Documents screens are connected to each customer. Create tickets, assign owners, change status, add local messages and internal notes, and attach/download documents against a customer or ticket. These records persist in this browser's localStorage; they are not shared with other users. Documents are limited to 2 MB total, with clear storage failure feedback. Do not use sensitive production records in this demo.
+
+Compose email saves a draft and opens the default email app using mailto. Actual sending happens in that app, not in the prototype; delivery and incoming replies are not tracked. Direct sending, shared ticketing, incoming email threading, private notes, secure document storage and access permissions require a real backend/Odoo connection. Customer portal preview does not expose the HQ communication workspace.
